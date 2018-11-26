@@ -33,7 +33,7 @@ function handleText(textNode)
 	var v = textNode.nodeValue;
 
 	v = v.replace(/\bThinking\b/g, "Thonking");
-	v = v.replace(/\bthinking\b/g, "thinking");
+	v = v.replace(/\bthinking\b/g, "thonking");
 	v = v.replace(/\bThink\b/g, "Thonk");
 	v = v.replace(/\bthink\b/g, "thonk");
 	
