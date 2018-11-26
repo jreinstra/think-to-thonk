@@ -6,14 +6,8 @@ function walk(node)
 	// http://is.gd/mwZp7E
 	
 	var child, next;
-	
-	if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'
-	    || node.classList.indexOf('ace_editor') > -1) {
-		return;
-	}
 
-	switch ( node.nodeType )  
-	{
+	switch ( node.nodeType )  {
 		case 1:  // Element
 		case 9:  // Document
 		case 11: // Document fragment
@@ -27,7 +21,9 @@ function walk(node)
 			break;
 
 		case 3: // Text node
-			handleText(node);
+		if(node.parentElement.tagName.toLowerCase() != "script") {
+        	handleText(node);
+    	}
 			break;
 	}
 }
